@@ -2,6 +2,7 @@
 #define PARSER_H
 
 #include <iostream>
+#include <sstream>
 #include "WordList.h"
 
 class Parser {
