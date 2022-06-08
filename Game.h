@@ -3,7 +3,8 @@
 #include <iostream>
 
 #include "Zone.h"
-#include "DesplazaComando.h"
+#include "MoveToCommand.h"
+#include "HelpCommand.h"
 #include "TakeCommand.h"
 #include "Parser.h"
 
@@ -28,30 +29,28 @@ Game::Game(){
 }
 
 void Game::creaComandos(){
-    ListaPalabras* comandos=parser.getComandos();
-    comandos->agregaComando("desplaza", new DesplazaComando(personaje));
-    comandos->agregaComando("toma", new TakeCommand(personaje));
-    comandos->agregaComando("ayuda", new HelpCommand(comandos));
+    WordList* comandos=parser.getComands();
+    comandos->addCommand("desplaza", new MoveToCommand(personaje));
+    comandos->addCommand("toma", new TakeCommand(personaje));
+    comandos->addCommand("ayuda", new HelpCommand(comandos));
 }
 
 /*crea todos los elementos que están presentes en el juego 
 y los configura (cuartos sus zones y que objetos hay en cada room)*/
 void Game::creaElementos(){
-    personaje=new Character("Fabi asustada", 150);
-    sala=new Zone("Sala de la casa, totalmente amueblada", false);
-    comedor=new Zone("Comedor con mesa para 8 personas", false);
-    jardin=new Zone("Jardin!!! Estas fuera de la casa", true);
-    pocion=new Item("pocion", 50);
-    libro=new Item("libro", 15);
-    monedas=new Item("Oro", 100);
-    llave=new Item("Llave", 0);
-    personaje->setPosicion(sala);
+    personaje=new Character("Fabi asustada");
+    sala=new Zone("Sala de la casa, totalmente amueblada");
+    comedor=new Zone("Comedor con mesa para 8 personas");
+    jardin=new Zone("Jardin!!! Estas fuera de la casa");
+    pocion=new Item("note1", "Description");
+    libro=new Item("note1", "Description");
+    monedas=new Item("note1", "Description");
+    llave=new Item("note1", "Description");
+    personaje->setPosition(sala);
     sala->agregaItem(libro);
     sala->agregaItem(monedas);
     comedor->agregaItem(pocion);
     comedor->agregaItem(llave);
-    sala->setSalidas(comedor, nullptr, nullptr, nullptr);
-    comedor->setSalidas(nullptr, sala, jardin, nullptr);
 }
 
 void Game::imprimeBienvenida(){
@@ -76,12 +75,12 @@ void Game::imprimeBienvenida(){
         bool salio = false;
         instr->run(); // se esta ejecutando polimorfismo
            
-        if(personaje->getPosicion()==jardin){
+        if(personaje->getPosition()==jardin){
             if(personaje->buscaItem("Llave")){
                 salio = true;
             }
             else{
-                personaje->setPosicion(comedor);
+                personaje->setPosition(comedor);
             }
         }
      return salio;
