@@ -1,5 +1,5 @@
-#ifndef LISTAPALABRAS_H
-#define LISTAPALABRAS_H
+#ifndef WORDLIST_H
+#define WORDLIST_H
 #include <iostream>
 #include <vector>
 #include <string>
@@ -18,4 +18,4 @@ class WordList{
 };
 
 
-#endif //ListaPalabras_H
+#endif //WORDLIST_H

@@ -1,5 +1,5 @@
-#ifndef TOMACOMANDO_H
-#define TOMACOMANDO_H
+#ifndef TAKECOMMAND_H
+#define TAKECOMMAND_H
 
 #include "Character.h"
 #include "Item.h"
@@ -13,4 +13,4 @@ class TakeCommand:public Command{
         Character* player;
 };
 
-#endif //TOMACOMANDO_H
+#endif //TAKECOMMAND_H
