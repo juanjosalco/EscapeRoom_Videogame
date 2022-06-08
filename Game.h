@@ -29,10 +29,10 @@ Game::Game(){
 }
 
 void Game::creaComandos(){
-    ListaPalabras* comandos=parser.getComandos();
-    comandos->agregaComando("desplaza", new DesplazaComando(personaje));
-    comandos->agregaComando("toma", new TomaComando(personaje));
-    comandos->agregaComando("ayuda", new AyudaComando(comandos));
+    WordList* comandos=parser.getComandos();
+    comandos->addCommand("desplaza", new DesplazaComando(personaje));
+    comandos->addCommand("toma", new TomaComando(personaje));
+    comandos->addCommand("ayuda", new AyudaComando(comandos));
 }
 
 /*crea todos los elementos que están presentes en el juego 

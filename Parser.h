@@ -2,24 +2,24 @@
 #define PARSER_H
 
 #include <iostream>
-#include "ListaPalabras.h"
+#include "WordList.h"
 
 class Parser {
     public:
         Parser();
-        Parser(ListaPalabras*);
-        ListaPalabras* getComandos();
+        Parser(WordList*);
+        WordList* getComandos();
         Command* generaComando();
     private:
-        ListaPalabras* comandos;
+        WordList* comandos;
 };
 
 Parser::Parser(){
-    comandos=new ListaPalabras;
+    comandos=new WordList;
 }
 
 
-ListaPalabras* Parser::getComandos(){
+WordList* Parser::getComandos(){
     return comandos;
 }
 
