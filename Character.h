@@ -82,7 +82,7 @@ void Character::agregaItem(Item* item){
 
 bool Character::buscaItem(std::string cosa){
     for(int i=0; i<numItems; i++){
-        if (inventario[i]->getDescripcion()==cosa){
+        if (inventario[i]->getDescription()==cosa){
             return true;
         }
     }
