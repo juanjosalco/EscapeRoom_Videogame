@@ -8,22 +8,22 @@ class Parser {
     public:
         Parser();
         Parser(WordList*);
-        WordList* getComandos();
-        Command* generaComando();
+        WordList* getComands();
+        Command* generateCommand();
     private:
-        WordList* comandos;
+        WordList* comands;
 };
 
 Parser::Parser(){
-    comandos=new WordList;
+    comands=new WordList;
 }
 
 
-WordList* Parser::getComandos(){
-    return comandos;
+WordList* Parser::getComands(){
+    return comands;
 }
 
-Command* Parser::generaComando(){
+Command* Parser::generateCommand(){
     std::string instruccion, primera, segunda;
     std::cout << ">>>>";
     std::getline(std::cin, instruccion);
@@ -31,7 +31,7 @@ Command* Parser::generaComando(){
     sstr >> primera;
     sstr >> segunda;
     sstr.ignore();
-    Command* com=comandos->getCommand(primera);
+    Command* com=comands->getCommand(primera);
     if(com){
         com->setNextWord(segunda);
     }

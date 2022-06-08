@@ -5,7 +5,7 @@
 #include "Zone.h"
 #include "DesplazaComando.h"
 #include "AyudaComando.h"
-#include "TomaComando.h"
+#include "TakeCommand.h"
 #include "Parser.h"
 
 class Game {
@@ -29,10 +29,10 @@ Game::Game(){
 }
 
 void Game::creaComandos(){
-    ListaPalabras* comandos=parser.getComandos();
-    comandos->agregaComando("desplaza", new DesplazaComando(personaje));
-    comandos->agregaComando("toma", new TakeCommand(personaje));
-    comandos->agregaComando("ayuda", new AyudaComando(comandos));
+    ListaPalabras* comands=parser.getComands();
+    comands->agregaComando("desplaza", new DesplazaComando(personaje));
+    comands->agregaComando("toma", new TakeCommand(personaje));
+    comands->agregaComando("ayuda", new AyudaComando(comands));
 }
 
 /*crea todos los elementos que están presentes en el juego 
@@ -66,7 +66,7 @@ void Game::imprimeBienvenida(){
         imprimeBienvenida();
         bool finished = false;
         while (!finished) {
-            Command* command = parser.generaComando();
+            Command* command = parser.generateCommand();
             finished = procesaComando(command);
         }
         
