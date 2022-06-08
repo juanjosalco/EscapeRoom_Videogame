@@ -31,7 +31,7 @@ Game::Game(){
 void Game::creaComandos(){
     ListaPalabras* comandos=parser.getComandos();
     comandos->agregaComando("desplaza", new DesplazaComando(personaje));
-    comandos->agregaComando("toma", new TomaComando(personaje));
+    comandos->agregaComando("toma", new TakeCommand(personaje));
     comandos->agregaComando("ayuda", new AyudaComando(comandos));
 }
 

@@ -9,11 +9,11 @@ class DesplazaComando:public Command{
         DesplazaComando(Character*);
         void run();
     private:
-        Character* jugador;
+        Character* player;
 };
 
 DesplazaComando::DesplazaComando(Character* personaje):Command("desplaza", ""){
-    jugador=personaje;
+    player=personaje;
 }
 
 void DesplazaComando::run(){
@@ -22,8 +22,8 @@ void DesplazaComando::run(){
     }
     else{
         std::string direc = getNextWord();
-        if (jugador->camina(direc)){
-            Zone* actual=jugador->getPosition();
+        if (player->camina(direc)){
+            Zone* actual=player->getPosition();
             std::cout << "Te has movido hacia el " << direc << std::endl;
             std::cout << "Ahora estas en: " << actual->getDescription() << std::endl;
         }
