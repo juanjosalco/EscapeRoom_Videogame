@@ -14,7 +14,7 @@ class Game {
         void creaElementos();
         void creaComandos();
         void play();
-        bool procesaComando(Comando*);
+        bool procesaComando(Command*);
         void imprimeBienvenida();
     private:
         Parser parser;
@@ -66,16 +66,16 @@ void Game::imprimeBienvenida(){
         imprimeBienvenida();
         bool finished = false;
         while (!finished) {
-            Comando* comando = parser.generaComando();
-            finished = procesaComando(comando);
+            Command* command = parser.generaComando();
+            finished = procesaComando(command);
         }
         
         std::cout << "Gracias por jugar este juego de aventura" << std::endl;
     }
 
-    bool Game::procesaComando(Comando* instr){
+    bool Game::procesaComando(Command* instr){
         bool salio = false;
-        instr->ejecuta(); // se esta ejecutando polimorfismo
+        instr->run(); // se esta ejecutando polimorfismo
            
         if(personaje->getPosicion()==jardin){
             if(personaje->buscaItem("Llave")){

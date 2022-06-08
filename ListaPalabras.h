@@ -7,19 +7,19 @@
 class ListaPalabras{
     public:
         ListaPalabras();
-        void agregaComando(std::string, Comando*);
+        void agregaComando(std::string, Command*);
         int esComando(std::string);
-        Comando* getComando(std::string);
+        Command* getCommand(std::string);
         std::string todosLosComandos();
 
     private:
         std::vector <std::string> palabras;
-        std::vector <Comando*> comandos;
+        std::vector <Command*> comandos;
 };
 
 ListaPalabras::ListaPalabras(){}
 
-void ListaPalabras::agregaComando(std::string pal, Comando* com){
+void ListaPalabras::agregaComando(std::string pal, Command* com){
     palabras.push_back(pal);
     comandos.push_back(com);
 }
@@ -33,7 +33,7 @@ int ListaPalabras::esComando(std::string pal){
     return -1;
 }
 
-Comando* ListaPalabras::getComando(std::string pal){
+Command* ListaPalabras::getCommand(std::string pal){
     int pos=esComando(pal);
     if(pos>=0){
         return comandos[pos];
@@ -46,7 +46,7 @@ std::string ListaPalabras::todosLosComandos(){
     for(std::string &pal : palabras){
         todos += "\t"+ pal + "\n";
     }
-    todos+= "\t->El comando va seguido de una segunda palabra\n\t->Solo el comando ayuda es de una sola palabra.";
+    todos+= "\t->El comand va seguido de una segunda palabra\n\t->Solo el comand ayuda es de una sola palabra.";
     return todos;
 }
 

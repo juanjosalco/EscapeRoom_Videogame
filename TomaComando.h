@@ -2,25 +2,25 @@
 #define TOMACOMANDO_H
 #include "Character.h"
 #include "Item.h"
-#include "Comando.h"
-class TomaComando:public Comando{
+#include "Command.h"
+class TomaComando:public Command{
     public:
         TomaComando(Character*);
-        void ejecuta();
+        void run();
     private:
         Character* jugador;
 };
 
-TomaComando::TomaComando(Character* personaje):Comando("Toma", ""){
+TomaComando::TomaComando(Character* personaje):Command("Toma", ""){
     jugador=personaje;
 }
 
-void TomaComando::ejecuta(){
-    if (!tieneSegPalabra()){
+void TomaComando::run(){
+    if (!hasNextWord()){
         std::cout<<"Que quieres tomar de la habitación?...\n" << "no puedo ayudarte si no me das toda la información..." << std::endl;
     }
     else{
-        std::string cosa = getSegPalabra();
+        std::string cosa = getNextWord();
         Zone* actual= jugador->getPosicion();
         int num=actual->buscaItem(cosa); //veo si está en el cuarto (posicion dentro del vector)
         if (num!=-1){

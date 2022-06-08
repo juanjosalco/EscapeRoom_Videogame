@@ -2,26 +2,26 @@
 #define DESPLAZACOMANDO_H
 #include <iostream>
 #include "Character.h"
-#include "Comando.h"
+#include "Command.h"
 
-class DesplazaComando:public Comando{
+class DesplazaComando:public Command{
     public:
         DesplazaComando(Character*);
-        void ejecuta();
+        void run();
     private:
         Character* jugador;
 };
 
-DesplazaComando::DesplazaComando(Character* personaje):Comando("desplaza", ""){
+DesplazaComando::DesplazaComando(Character* personaje):Command("desplaza", ""){
     jugador=personaje;
 }
 
-void DesplazaComando::ejecuta(){
-    if (!tieneSegPalabra()){
+void DesplazaComando::run(){
+    if (!hasNextWord()){
         std::cout<<"A donde quieres ir?... sin direccion no puedo ayudarte..." << std::endl;
     }
     else{
-        std::string direc = getSegPalabra();
+        std::string direc = getNextWord();
         if (jugador->camina(direc)){
             Zone* actual=jugador->getPosicion();
             std::cout << "Te has movido hacia el " << direc << std::endl;

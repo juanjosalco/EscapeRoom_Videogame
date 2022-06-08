@@ -9,7 +9,7 @@ class Parser {
         Parser();
         Parser(ListaPalabras*);
         ListaPalabras* getComandos();
-        Comando* generaComando();
+        Command* generaComando();
     private:
         ListaPalabras* comandos;
 };
@@ -23,7 +23,7 @@ ListaPalabras* Parser::getComandos(){
     return comandos;
 }
 
-Comando* Parser::generaComando(){
+Command* Parser::generaComando(){
     std::string instruccion, primera, segunda;
     std::cout << ">>>>";
     std::getline(std::cin, instruccion);
@@ -31,9 +31,9 @@ Comando* Parser::generaComando(){
     sstr >> primera;
     sstr >> segunda;
     sstr.ignore();
-    Comando* com=comandos->getComando(primera);
+    Command* com=comandos->getCommand(primera);
     if(com){
-        com->setSegPalabra(segunda);
+        com->setNextWord(segunda);
     }
     return com;
 }
