@@ -1,4 +1,4 @@
-#ifndef AYUDACOMANDO_h
+#ifndef AYUDACOMANDO_H
 #define AYUDACOMANDO_H
 #include "Comando.h"
 #include "ListaPalabras.h"

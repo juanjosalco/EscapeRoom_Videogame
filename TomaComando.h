@@ -1,4 +1,4 @@
-#ifndef TOMACOMANDO_h
+#ifndef TOMACOMANDO_H
 #define TOMACOMANDO_H
 #include "Character.h"
 #include "Item.h"

@@ -43,7 +43,7 @@ Comando* ListaPalabras::getComando(std::string pal){
 
 std::string ListaPalabras::todosLosComandos(){
     std::string todos="Los comandos que puedes usar son:\n";
-    for(std::string &pal:palabras){
+    for(std::string &pal : palabras){
         todos += "\t"+ pal + "\n";
     }
     todos+= "\t->El comando va seguido de una segunda palabra\n\t->Solo el comando ayuda es de una sola palabra.";
