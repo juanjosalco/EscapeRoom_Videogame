@@ -21,7 +21,7 @@ void TomaComando::run(){
     }
     else{
         std::string cosa = getNextWord();
-        Zone* actual= jugador->getPosicion();
+        Zone* actual= jugador->getPosition();
         int num=actual->buscaItem(cosa); //veo si está en el cuarto (posicion dentro del vector)
         if (num!=-1){
             Item* paraJugador=actual->getItem(num);

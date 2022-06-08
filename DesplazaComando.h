@@ -23,7 +23,7 @@ void DesplazaComando::run(){
     else{
         std::string direc = getNextWord();
         if (jugador->camina(direc)){
-            Zone* actual=jugador->getPosicion();
+            Zone* actual=jugador->getPosition();
             std::cout << "Te has movido hacia el " << direc << std::endl;
             std::cout << "Ahora estas en: " << actual->getDescription() << std::endl;
         }
