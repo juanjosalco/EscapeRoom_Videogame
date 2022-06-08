@@ -4,7 +4,6 @@
 
 #include "Zone.h"
 #include "DesplazaComando.h"
-#include "AyudaComando.h"
 #include "TakeCommand.h"
 #include "Parser.h"
 
