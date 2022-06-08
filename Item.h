@@ -6,46 +6,46 @@
 class Item {
     public:
         Item();
-        Item(std::string, int);
-        std::string getDescripcion() const;
-        int getPeso() const;
-        void setDescripcion(std::string);
-        void setPeso(int);
+        Item(std::string, std::string);
+        std::string getDescription() const;
+        std::string getName() const;
+        void setDescription(std::string);
+        void setName(std::string);
         std::string getDescripcionLarga();
         
     private:
-        std::string descripcion;
-        int peso;
+        std::string description;
+        std::string name;
 };
 
 Item::Item(){
-    descripcion="Este es una cosita bonita";
-    peso=1;
+    description="Este es una cosita bonita";
+    name="";
 }
 
-Item::Item(std::string desc, int pes){
-    descripcion=desc;
-    peso=pes;
+Item::Item(std::string name_, std::string des){
+    description=des;
+    name=name_;
 }
 
-int Item::getPeso() const{
-    return peso;
+std::string Item::getName()const{
+    return name;
 }
 
-std::string Item::getDescripcion() const{
-    return descripcion;
+std::string Item::getDescription() const{
+    return description;
 }
 
-void Item::setPeso(int pes){
-    peso=pes;
+void Item::setName(std::string name_){
+    name=name_;
 }
 
-void Item::setDescripcion(std::string descp){
-    descripcion=descp;
+void Item::setDescription(std::string descp){
+    description=descp;
 }
 
 std::string Item::getDescripcionLarga(){
-    return descripcion + " y pesa " + std::to_string(peso);
+    return name+ ": \n" + description ;
 }
 
 #endif //ITEM_H
