@@ -2,7 +2,7 @@
 #define GAME_H
 #include <iostream>
 
-#include "Room.h"
+#include "Zone.h"
 #include "DesplazaComando.h"
 #include "AyudaComando.h"
 #include "TomaComando.h"
@@ -19,7 +19,7 @@ class Game {
     private:
         Parser parser;
         Character* personaje;
-        Room *sala, *comedor, *jardin;
+        Zone *sala, *comedor, *jardin;
         Item *pocion, *libro, *monedas, *llave; 
 };
 
@@ -36,12 +36,12 @@ void Game::creaComandos(){
 }
 
 /*crea todos los elementos que están presentes en el juego 
-y los configura (cuartos sus salidas y que objetos hay en cada room)*/
+y los configura (cuartos sus zones y que objetos hay en cada room)*/
 void Game::creaElementos(){
     personaje=new Character("Fabi asustada", 150);
-    sala=new Room("Sala de la casa, totalmente amueblada", false);
-    comedor=new Room("Comedor con mesa para 8 personas", false);
-    jardin=new Room("Jardin!!! Estas fuera de la casa", true);
+    sala=new Zone("Sala de la casa, totalmente amueblada", false);
+    comedor=new Zone("Comedor con mesa para 8 personas", false);
+    jardin=new Zone("Jardin!!! Estas fuera de la casa", true);
     pocion=new Item("pocion", 50);
     libro=new Item("libro", 15);
     monedas=new Item("Oro", 100);

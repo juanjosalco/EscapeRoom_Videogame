@@ -1,7 +1,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 #include <iostream>
-#include "Room.h"
+#include "Zone.h"
 
 class Character {
     public:
@@ -12,8 +12,8 @@ class Character {
         void setNombre(std::string);
         void setHp(int);
         void actualizaHp(int);
-        Room* getPosicion() const;
-        void setPosicion(Room*);
+        Zone* getPosicion() const;
+        void setPosicion(Zone*);
         void agregaItem(Item*);
         Item* consultaItem(int pos) const;
         void imprime();
@@ -23,7 +23,7 @@ class Character {
     private:
         std::string nombre;
         int hp;
-        Room* posicion;
+        Zone* posicion;
         Item* inventario[5];
         int numItems;
 };
@@ -63,11 +63,11 @@ void Character::actualizaHp(int pts){
     hp+=pts;
 }
 
-Room* Character::getPosicion() const{
+Zone* Character::getPosicion() const{
     return posicion;
 }
 
-void Character::setPosicion(Room* nuevo){
+void Character::setPosicion(Zone* nuevo){
     posicion=nuevo;
 }
         
@@ -82,22 +82,7 @@ void Character::agregaItem(Item* item){
 
 bool Character::buscaItem(std::string cosa){
     for(int i=0; i<numItems; i++){
-        if (inventario[i]->getDescripcion()==cosa){
-            return true;
-        }
-    }
-    return false;
-}
-
-bool Character::camina(std::string dir){
-    Room* voyA=posicion->getSalida(dir);
-    if (voyA!=nullptr && !voyA->requiereLlave()){
-        setPosicion(voyA);
-        return true;
-    }
-    else if (voyA!=nullptr && voyA->requiereLlave()){
-        if (buscaItem("Llave")){
-            setPosicion(voyA);
+        if (inventario[i]->getDescription()==cosa){
             return true;
         }
     }
