@@ -14,7 +14,7 @@ class WordList{
 
     private:
         std::vector <std::string> palabras;
-        std::vector <Command*> comandos;
+        std::vector <Command*> comands;
 };
 
 

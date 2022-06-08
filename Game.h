@@ -5,7 +5,7 @@
 #include "Zone.h"
 #include "DesplazaComando.h"
 #include "AyudaComando.h"
-#include "TomaComando.h"
+#include "TakeCommand.h"
 #include "Parser.h"
 
 class Game {
@@ -66,7 +66,7 @@ void Game::imprimeBienvenida(){
         imprimeBienvenida();
         bool finished = false;
         while (!finished) {
-            Command* command = parser.generaComando();
+            Command* command = parser.generateCommand();
             finished = procesaComando(command);
         }
         
