@@ -33,7 +33,7 @@ void Character::setPosition(Zone* nuevo){
         
 void Character::agregaItem(Item* item){
     if (numItems<11){
-        inventario[numItems++]=item;
+        inventory[numItems++]=item;
     }
     else{
         std::cout << "Tu bolsa esta llena viajero, no puedes guardar este artículo..."<<std::endl;
@@ -42,7 +42,7 @@ void Character::agregaItem(Item* item){
 
 bool Character::buscaItem(std::string cosa){
     for(int i=0; i<numItems; i++){
-        if (inventario[i]->getDescription()==cosa){
+        if (inventory[i]->getDescription()==cosa){
             return true;
         }
     }

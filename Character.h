@@ -1,6 +1,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 #include <iostream>
+#include <vector>
 #include "Zone.h"
 
 class Character {
@@ -19,7 +20,7 @@ class Character {
     private:
         std::string name;
         Zone* position;
-        Item* inventario[11];
+        Item* inventory[11];
         int numItems;
 };
 
