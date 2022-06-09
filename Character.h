@@ -14,7 +14,7 @@ class Character {
         void setPosition(Zone*);
         void addItem(Item*);
         Item* consultItem(int pos) const;
-        void Display();
+        void display();
         bool searchItem(std::string);
         //virtual void ataque(Personaje&);
     private:
