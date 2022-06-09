@@ -14,7 +14,6 @@ class Character {
         void agregaItem(Item*);
         Item* consultaItem(int pos) const;
         void imprime();
-        bool camina(std::string);
         bool buscaItem(std::string);
         //virtual void ataque(Personaje&);
     private:
