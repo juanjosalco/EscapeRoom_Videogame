@@ -54,18 +54,3 @@ void Character::imprime(){
     std::cout << "y llevo en mi bolsa "<< numItems << "objetos recolectados." << std::endl;
 }
 
-bool Character::camina(std::string dir){
-    Zone* voyA=position->getSalida(dir);
-    if (voyA!=nullptr && !voyA->requiereLlave()){
-        setPosition(voyA);
-        return true;
-    }
-    else if (voyA!=nullptr && voyA->requiereLlave()){
-        if (buscaItem("Llave")){
-            setPosition(voyA);
-            return true;
-        }
-    }
-    return false;
-}
-
