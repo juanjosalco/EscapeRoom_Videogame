@@ -12,8 +12,8 @@ class Zone {
         std::string getDescription();
         Item* getItem(int);
         void sacaItem(int);
-        void agregaItem(Item*);
-        int buscaItem(std::string);
+        void addItem(Item*);
+        int searchItem(std::string);
         void descripcionLarga();
     private:
         std::string description;

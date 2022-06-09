@@ -12,10 +12,10 @@ class Character {
         void setName(std::string);
         Zone* getPosition() const;
         void setPosition(Zone*);
-        void agregaItem(Item*);
-        Item* consultaItem(int pos) const;
-        void imprime();
-        bool buscaItem(std::string);
+        void addItem(Item*);
+        Item* consultItem(int pos) const;
+        void Display();
+        bool searchItem(std::string);
         //virtual void ataque(Personaje&);
     private:
         std::string name;

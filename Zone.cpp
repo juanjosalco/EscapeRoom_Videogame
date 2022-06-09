@@ -26,10 +26,10 @@ Item* Zone::getItem(int num){
     return nullptr;
 }
 
-void Zone::agregaItem(Item* thing){
+void Zone::addItem(Item* thing){
     items.push_back(thing);
 }
-int Zone::buscaItem(std::string what){
+int Zone::searchItem(std::string what){
     for(int i=0; i<items.size();i++){
         if(items[i]->getDescription()==what){
             return i; //devuelve la posición donde está ese objeto

@@ -31,7 +31,7 @@ void Character::setPosition(Zone* nuevo){
     position=nuevo;
 }
         
-void Character::agregaItem(Item* item){
+void Character::addItem(Item* item){
     if (numItems<11){
         inventory[numItems++]=item;
     }
@@ -40,7 +40,7 @@ void Character::agregaItem(Item* item){
     }
 }
 
-bool Character::buscaItem(std::string cosa){
+bool Character::searchItem(std::string cosa){
     for(int i=0; i<numItems; i++){
         if (inventory[i]->getDescription()==cosa){
             return true;
@@ -49,8 +49,7 @@ bool Character::buscaItem(std::string cosa){
     return false;
 }
 
-void Character::imprime(){
+void Character::Display(){
     std::cout << "Soy " << name << std::endl;
     std::cout << "y llevo en mi bolsa "<< numItems << "objetos recolectados." << std::endl;
 }
-

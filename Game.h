@@ -47,10 +47,10 @@ void Game::creaElementos(){
     monedas=new Item("note1", "Description");
     llave=new Item("note1", "Description");
     personaje->setPosition(sala);
-    sala->agregaItem(libro);
-    sala->agregaItem(monedas);
-    comedor->agregaItem(pocion);
-    comedor->agregaItem(llave);
+    sala->addItem(libro);
+    sala->addItem(monedas);
+    comedor->addItem(pocion);
+    comedor->addItem(llave);
 }
 
 void Game::imprimeBienvenida(){
@@ -76,7 +76,7 @@ void Game::imprimeBienvenida(){
         instr->run(); // se esta ejecutando polimorfismo
            
         if(personaje->getPosition()==jardin){
-            if(personaje->buscaItem("Llave")){
+            if(personaje->searchItem("Llave")){
                 salio = true;
             }
             else{
