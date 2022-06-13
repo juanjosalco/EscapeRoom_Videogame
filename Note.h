@@ -3,14 +3,14 @@
 #include <iostream>
 #include "Item.h"
 
-class Note
+class Note: public Item
 {
 private:
     std::string content;
 public:
     Note();
-    Note(std::string);
-    std::string getContent();
+    Note(std::string,std::string,std::string);
+    std::string getDescripcionLarga();
 };
 
 #endif // NOTE_H

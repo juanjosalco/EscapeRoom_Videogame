@@ -4,11 +4,11 @@ Note::Note()
 {
 }
 
-Note::Note(std::string content_)
+Note::Note(std::string name_,std::string dest_,std::string content_):Item(name_,dest_)
 {
     content=content_;
 }
 
-std::string Note::getContent(){
-    return content;
+std::string Note::getDescripcionLarga(){
+    return Item::getDescripcionLarga()+"\n"+content;
 }
