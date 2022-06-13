@@ -14,13 +14,4 @@ public:
     std::string getDescripcionLarga();
 };
 #endif //PIEZE_H
-Pieze::Pieze()
-{
-}
-
-Pieze::Pieze(std::string name_,std::string dest_,int id_,bool use_ ):Item(name_,dest_)
-{
-    id=id_;
-    use=use_;
-}
 
