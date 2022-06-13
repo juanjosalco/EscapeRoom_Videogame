@@ -1,15 +1,15 @@
 #include <iostream>
 #include "Pieze.h"
 
-Pieze::Pieze()
+Piece::Piece()
 {
 }
 
-Pieze::Pieze(std::string name_,std::string dest_,int id_,bool use_ ):Item(name_,dest_)
+Piece::Piece(std::string name_,std::string dest_,int id_,bool use_ ):Item(name_,dest_)
 {
     id=id_;
     use=use_;
 }
-std::string Pieze::getDescripcionLarga(){
+std::string Piece::getDescripcionLarga(){
     return Item::getDescripcionLarga()+"\n"+"Usos"+std::to_string(use);
 }
