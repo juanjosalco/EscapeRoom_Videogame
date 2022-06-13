@@ -7,9 +7,9 @@ Character::Character(){
     numItems=0;
 }
 
-Character::Character(std::string name){
+Character::Character(std::string name_){
     position=nullptr;
-    name=name;
+    name=name_;
     numItems=0;
 }
 
