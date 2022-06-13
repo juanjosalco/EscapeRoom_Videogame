@@ -14,15 +14,3 @@ public:
 };
 
 #endif // NOTE_H
-Note::Note()
-{
-}
-
-Note::Note(std::string content_)
-{
-    content=content_;
-}
-
-std::string Note::getContent(){
-    return content;
-}
