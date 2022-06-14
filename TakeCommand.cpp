@@ -12,18 +12,27 @@ void TakeCommand::run(){
     else{
         std::string thing = getNextWord();
         Zone* actual= player->getPosition();
+        std::vector <Item*> itemsz=actual->getItems();
+        
+        
         int num=actual->searchItem(thing); //veo si está en el cuarto (posicion dentro del vector)
         if (num!=-1){
             Item* forPlayer=actual->getItem(num);
             player->addItem(forPlayer);
             actual->sacaItem(num);
             std::cout << "Ahora tienes en tu poder: "<< std::endl;
-            std::cout << forPlayer->getDescription() << std::endl;
+            std::cout << forPlayer->getDescripcionLarga() << std::endl;
         }
         else{
             std::cout<< "Ese objeto no se encuentra en esta habitacion..."<<std::endl;
             std::cout << "Recuerda tu estas aqui: " << std::endl;
-            actual->getDescription();
+            std::cout<<actual->getName()<<std::endl;
+            std::cout<<"En esta zona hay:"<<std::endl;
+            for (int i = 0; i < itemsz.size(); i++)
+            {
+                std::cout<<itemsz[i]->getName()<<std::endl;
+            }
+            
         }
     }
 }

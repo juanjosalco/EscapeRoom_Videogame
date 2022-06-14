@@ -12,6 +12,7 @@ class Zone {
         std::string getName();
         std::string getDescription();
         Item* getItem(int);
+        std::vector <Item*> getItems();
         void sacaItem(int);
         void addItem(Item*);
         int searchItem(std::string);

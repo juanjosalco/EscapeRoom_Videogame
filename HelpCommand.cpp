@@ -1,7 +1,7 @@
 #include <iostream>
 #include "HelpCommand.h"
 
-HelpCommand::HelpCommand(WordList* words):Command("Ayuda", ""){
+HelpCommand::HelpCommand(WordList* words):Command("help", ""){
     avalible=words;
 }
 
