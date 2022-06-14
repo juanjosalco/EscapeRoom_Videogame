@@ -11,7 +11,7 @@ Piece::Piece(std::string name_,std::string dest_,int id_,bool use_ ):Item(name_,
     use=use_;
 }
 std::string Piece::getDescripcionLarga(){
-    return Item::getDescripcionLarga()+"\n"+"Usos"+std::to_string(use);
+    return Item::getDescripcionLarga()+"\n"+"Usos: "+std::to_string(use);
 }
 
 bool Piece::getUse(){
