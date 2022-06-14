@@ -3,6 +3,8 @@
 
 #include "Character.h"
 #include "Item.h"
+#include "Note.h"
+#include "Piece.h"
 #include "Command.h"
 
 class TakeCommand:public Command{

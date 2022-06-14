@@ -11,7 +11,7 @@ class Item {
         std::string getName() const;
         void setDescription(std::string);
         void setName(std::string);
-        std::string getDescripcionLarga();
+        virtual std::string getDescripcionLarga()=0;
         
     private:
         std::string description;
