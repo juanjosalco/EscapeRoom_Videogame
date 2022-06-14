@@ -8,7 +8,8 @@
 class Zone {
     public:
         Zone();
-        Zone(std::string);
+        Zone(std::string,std::string);
+        std::string getName();
         std::string getDescription();
         Item* getItem(int);
         void sacaItem(int);
@@ -16,6 +17,7 @@ class Zone {
         int searchItem(std::string);
         void descripcionLarga();
     private:
+        std::string name;
         std::string description;
         std::vector<Item*> items;
         Zone* zones[5];

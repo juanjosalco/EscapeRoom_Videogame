@@ -8,11 +8,16 @@ Zone::Zone(){
         zones[i]=nullptr;
     }
 }
-Zone::Zone(std::string desc){
+Zone::Zone(std::string name_,std::string desc){
+    name=name_;
     description=desc;
     for (int i=0; i<5; i++){
         zones[i]=nullptr;
     }
+}
+
+std::string Zone::getName(){
+    return name;    
 }
 
 std::string Zone::getDescription(){
