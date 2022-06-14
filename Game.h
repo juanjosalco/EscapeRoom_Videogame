@@ -43,6 +43,7 @@ void Game::creaComandos(){
 /*crea todos los elementos que están presentes en el juego 
 y los configura (cuartos sus zones y que objetos hay en cada room)*/
 void Game::creaElementos(){
+    
     personaje=new Character("Fabi asustada");
     start=new Zone("Centro","aqui te despertaste");
     chest=new Zone("Baul","Un viejo baul con un candado");
@@ -82,6 +83,63 @@ void Game::creaElementos(){
     desk->addItem(piece6);
     zexit->addItem(note7);
     zexit->addItem(note8);
+    
+    //setear las zonas al rededor de otras
+    start->setZonez(chest);
+    start->setZonez(bookcase);
+    start->setZonez(clocks);
+    start->setZonez(table);
+    start->setZonez(desk);
+    start->setZonez(zexit);
+
+    chest->setZonez(start);
+    chest->setZonez(bookcase);
+    chest->setZonez(clocks);
+    chest->setZonez(table);
+    chest->setZonez(desk);
+    chest->setZonez(zexit);
+
+    bookcase->setZonez(start);
+    bookcase->setZonez(chest);
+    bookcase->setZonez(clocks);
+    bookcase->setZonez(table);
+    bookcase->setZonez(desk);
+    bookcase->setZonez(zexit);
+
+    clocks->setZonez(start);
+    clocks->setZonez(chest);
+    clocks->setZonez(bookcase);
+    clocks->setZonez(table);
+    clocks->setZonez(desk);
+    clocks->setZonez(zexit);
+
+    clocks->setZonez(start);
+    clocks->setZonez(chest);
+    clocks->setZonez(bookcase);
+    clocks->setZonez(table);
+    clocks->setZonez(desk);
+    clocks->setZonez(zexit);
+
+    table->setZonez(start);
+    table->setZonez(chest);
+    table->setZonez(bookcase);
+    table->setZonez(clocks);
+    table->setZonez(desk);
+    table->setZonez(zexit);
+
+    desk->setZonez(start);
+    desk->setZonez(chest);
+    desk->setZonez(bookcase);
+    desk->setZonez(clocks);
+    desk->setZonez(table);
+    desk->setZonez(zexit);
+
+    zexit->setZonez(start);
+    zexit->setZonez(chest);
+    zexit->setZonez(bookcase);
+    zexit->setZonez(clocks);
+    zexit->setZonez(table);
+    zexit->setZonez(desk);
 }
 
 void Game::setZones(){
@@ -99,13 +157,40 @@ void Game::imprimeBienvenida(){
     std::cout<<"Acabas de despertar, pero oh sorpresa, estas en una casa siniestra"<<std::endl;
     std::cout <<"La casa se ve oscura, da escalofrios, debes salir de aqui..."<<std::endl;
     std::cout << "Si necesitas ayuda teclea la palabra: help" << std::endl;
+    std::cout <<"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"<< std::endl;
+    std::cout <<"░█████████████████████████████████████████████████████████████████████████░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░┌───────────────────────┐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░██░│█████║██║██║██║██║█████│░██░░░░░░░░┌──▄───┐░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░└───────────────────────┘░░░░░░░░░░┌┘▀░│░░▀└┐░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│▌░░░░░░▐│░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░░██░██░██░██░██░██░██░██░░░░░░░░░░░└┐▄░▄░░▄┌┘░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█┌──┐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░└──────┘░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█│╔╗│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█│║║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█│║║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▄▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█│║║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▄▄▄██▄▄▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█│║║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░████░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█│║║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█│║║│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░───█░░█───░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█│╚╝│░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░──────░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█└──┘░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░░▄▄▄▄▄▄▄▄▄▄▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░█▒▒▒▒▒▒▒▒▒▒▒█░░░░░░░░░░░░╔═════════════════╗░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░▌▒▒▒▒▒╬▒▒▒▒▒▐░░░░░░░░░░░░║▒▒▒▒▒▒▀▀▀▀▒▒▀─┐▒▒║░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█░░░░░░▌═══════════▐░░░░░░░░░░░░║▒▒▒▀▀▀▀▀▀▀▀▀▀─┘▒▒║░░░░░░░░░░░░░░░░░░░░░█░"<< std::endl;
+    std::cout <<"░█████████████████████████████████████████████████████████████████████████░"<< std::endl;
+    std::cout <<"░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"<< std::endl;
 }
 
- void Game::play()
-    {
+ void Game::play(){
+    
+        std::cout<<"."<<std::endl;
         imprimeBienvenida();
-        creaElementos();
-        setZones();
         bool finished = false;
         while (!finished) {
             Command* command = parser.generateCommand();

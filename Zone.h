@@ -9,6 +9,7 @@ class Zone {
     public:
         Zone();
         Zone(std::string,std::string);
+        void setZonez(Zone*);
         std::string getName();
         std::string getDescription();
         Item* getItem(int);
@@ -21,7 +22,7 @@ class Zone {
         std::string name;
         std::string description;
         std::vector<Item*> items;
-        Zone* zones[5];
+        std::vector <Zone*> zones;
 };
 
 #endif //ROOM_H

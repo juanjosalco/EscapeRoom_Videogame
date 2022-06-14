@@ -11,9 +11,10 @@ Zone::Zone(){
 Zone::Zone(std::string name_,std::string desc){
     name=name_;
     description=desc;
-    for (int i=0; i<5; i++){
-        zones[i]=nullptr;
-    }
+}
+
+void Zone::setZonez(Zone* zon){
+    zones.push_back(zon);
 }
 
 std::string Zone::getName(){
