@@ -14,6 +14,7 @@ public:
     std::string getDescripcionLarga();
     int getPieceId();
     bool getUse();
+    void setUse(bool);
 
 };
 #endif //PIEZE_H

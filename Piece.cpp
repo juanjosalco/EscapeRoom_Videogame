@@ -21,3 +21,7 @@ bool Piece::getUse(){
 int Piece::getPieceId(){
     return id;
 }
+
+void Piece::setUse(bool use_){
+    use=use_;
+}

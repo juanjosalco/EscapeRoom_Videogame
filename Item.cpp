@@ -44,3 +44,5 @@ void Item::setBlock(bool block_){
 std::string Item::getDescripcionLarga(){
     return name+ ": \n" + description ;
 }
+
+void Item::setUses(bool a){}
