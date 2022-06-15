@@ -17,10 +17,18 @@ void TakeCommand::run(){
         
         int num=actual->searchItem(thing); //veo si está en el cuarto (posicion dentro del vector)
         if (num!=-1){
+            
+            if (itemsz[num]->getBlock())
+            {
+                std::cout<<"no puedes tomar este item parece que necesitas otro item para acceder "<<std::endl;
+            }
+            else{
+            
             player->addItem(itemsz[num]);
             actual->sacaItem(num);
             std::cout << "Ahora tienes en tu poder: "<< std::endl;
             std::cout << itemsz[num]->getDescripcionLarga() << std::endl;
+            }
         }
         else{
             std::cout<< "Ese objeto no se encuentra en esta habitacion..."<<std::endl;
