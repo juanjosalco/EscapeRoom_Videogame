@@ -36,6 +36,10 @@ std::vector <Item*> Zone::getItems(){
     return items;
 }
 
+std::vector <Zone*> Zone::getZones(){
+    return zones;
+}
+
 void Zone::addItem(Item* thing){
     items.push_back(thing);
 }

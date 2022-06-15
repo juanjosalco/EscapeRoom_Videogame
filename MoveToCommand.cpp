@@ -11,8 +11,16 @@ void MoveToCommand::run(){
     else{
         std::string direc = getNextWord();
         Zone* actual= player->getPosition();
-        for (int i = 0; i <5; i++)
+        std::vector <Zone*> zonas=actual->getZones();
+        for (int i = 0; i <zonas.size(); i++)
         {
+           if (zonas[i]->getName()==direc)
+           {
+            player->setPosition(zonas[i]);
+            std::cout<<"ahora estas en: "<<zonas[i]->getName()<<"\n"<<zonas[i]->getDescription()<<std::endl;
+           }else{
+            std::cout<<"Creo"<<std::endl;
+           }
            
         }
         
