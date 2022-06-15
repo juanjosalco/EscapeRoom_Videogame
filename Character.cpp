@@ -32,12 +32,7 @@ void Character::setPosition(Zone* nuevo){
 }
         
 void Character::addItem(Item* item){
-    if (numItems<11){
-        inventory[numItems++]=item;
-    }
-    else{
-        std::cout << "Tu bolsa esta llena viajero, no puedes guardar este artículo..."<<std::endl;
-    }
+    inventory.push_back(item);
 }
 
 bool Character::searchItem(std::string cosa){
