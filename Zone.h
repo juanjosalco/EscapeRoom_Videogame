@@ -14,6 +14,7 @@ class Zone {
         std::string getDescription();
         Item* getItem(int);
         std::vector <Item*> getItems();
+        std::vector <Zone*> getZones();
         void sacaItem(int);
         void addItem(Item*);
         int searchItem(std::string);
