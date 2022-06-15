@@ -18,8 +18,6 @@ void MoveToCommand::run(){
            {
             player->setPosition(zonas[i]);
             std::cout<<"ahora estas en: "<<zonas[i]->getName()<<"\n"<<zonas[i]->getDescription()<<std::endl;
-           }else{
-            std::cout<<"Creo"<<std::endl;
            }
            
         }
