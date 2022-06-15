@@ -17,3 +17,7 @@ std::string Piece::getDescripcionLarga(){
 bool Piece::getUse(){
     return use;
 }
+
+int Piece::getPieceId(){
+    return id;
+}

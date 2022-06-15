@@ -25,6 +25,9 @@ std::string Item::getDescription() const{
 bool Item::getBlock()const{
     return block;
 }
+int Item::getPieceId(){
+    return 0;
+}
 
 void Item::setName(std::string name_){
     name=name_;

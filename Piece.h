@@ -12,7 +12,9 @@ public:
     Piece();
     Piece(std::string,std::string,bool,int,bool);
     std::string getDescripcionLarga();
+    int getPieceId();
     bool getUse();
+
 };
 #endif //PIEZE_H
 

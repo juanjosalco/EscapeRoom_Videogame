@@ -12,3 +12,7 @@ Note::Note(std::string name_,std::string dest_,bool block_,std::string content_)
 std::string Note::getDescripcionLarga(){
     return Item::getDescripcionLarga()+"\n"+content;
 }
+
+int Note::getPieceId(){
+    return 0;
+}

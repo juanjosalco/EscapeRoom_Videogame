@@ -11,6 +11,7 @@ public:
     Note();
     Note(std::string,std::string,bool,std::string);
     std::string getDescripcionLarga();
+    int getPieceId();
 };
 
 #endif // NOTE_H

@@ -14,6 +14,7 @@ class Item {
         void setName(std::string);
         void setBlock(bool);
         virtual std::string getDescripcionLarga()=0;
+        virtual int getPieceId();
         
     private:
         std::string description;

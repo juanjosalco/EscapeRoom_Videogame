@@ -8,9 +8,10 @@ Zone::Zone(){
         zones[i]=nullptr;
     }
 }
-Zone::Zone(std::string name_,std::string desc){
+Zone::Zone(std::string name_,std::string desc, int zoneId_){
     name=name_;
     description=desc;
+    zoneId = zoneId_;
 }
 
 void Zone::setZonez(Zone* zon){
@@ -30,6 +31,10 @@ Item* Zone::getItem(int num){
         return items[num];
     }
     return nullptr;
+}
+
+int Zone::getZoneId(){
+    return zoneId;
 }
 
 std::vector <Item*> Zone::getItems(){

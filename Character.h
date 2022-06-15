@@ -16,11 +16,12 @@ class Character {
         Item* consultItem(int pos) const;
         void display();
         bool searchItem(std::string);
+        std::vector<Item*> getInventory();
         //virtual void ataque(Personaje&);
     private:
         std::string name;
         Zone* position;
-        Item* inventory[11];
+        std::vector<Item*> inventory;
         int numItems;
 };
 
