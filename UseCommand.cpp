@@ -22,7 +22,7 @@ void UseCommand::run(){
                     {
                         itemzz[i]->setBlock(false);
                     }
-                    
+                    std::cout << "Item elegido usado correctamente" << std::endl;  
 
                 }else{
                     std::cout<<"Este Item no funciona aquí "<<std::endl;

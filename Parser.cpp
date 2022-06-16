@@ -21,5 +21,18 @@ Command* Parser::generateCommand(){
     if(com){
         com->setNextWord(second);
     }
-    return com;
+
+    try  {
+       Command* com=comands->getCommand(first);
+       if(com){
+        com->setNextWord(second);
+        return com;
+       } else {
+        throw com;
+       }
+    }
+    catch (Command* error)  {
+        std::cout << "Debes ingresar un comando válido\n";
+    }
 }
+

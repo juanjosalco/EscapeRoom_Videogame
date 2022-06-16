@@ -11,6 +11,7 @@
 #include "Parser.h"
 #include "UseCommand.h"
 #include "InventoryCommand.h"
+#include "ExitCommand.h"
 
 class Game {
     public:
@@ -42,6 +43,7 @@ void Game::creaComandos(){
     comandos->addCommand("help", new HelpCommand(comandos));
     comandos->addCommand("use",new UseCommand(personaje));
     comandos->addCommand("inventory",new InventoryCommand(personaje));
+    comandos->addCommand("exit",new ExitCommand(personaje));
 }
 
 /*crea todos los elementos que están presentes en el juego 
@@ -69,12 +71,12 @@ void Game::creaElementos(){
     piece3=new Piece("Aguja_de_reloj","Parece pertenecer a un reloj antiguo por su forma tan rebuscada y elegante",true,03,true);
     piece4=new Piece("Encendedor","Un zippo de metal con la incripcion 'Magico'",true,04,true);
     piece5=new Piece("Cable_de_alimentacion","Un simple cable de alimentacion para computadora",true,05,true);
-    piece6=new Piece("Llave_final","Esta vieja y oxidada pero aún debe de funcionar",true,06,true);
+    piece6=new Piece("Llave_final","Esta vieja y oxidada pero aún debe de funcionar",false,06,true);
     
 
     personaje->setPosition(start);
     start->addItem(note1);
-    start->addItem(piece1);
+    start->addItem(piece6);
     chest->addItem(note2);
     chest->addItem(piece2);
     bookcase->addItem(note3);
@@ -183,9 +185,11 @@ void Game::imprimeBienvenida(){
            
         if(personaje->getPosition()==zexit){
             if(personaje->searchItem("nota_final")||personaje->searchItem("nota_final_alternativa")){
-                salio=true;
+                exit(0);
             }
-            else{}
+            else{
+                exit(0);
+            }
         }
      return salio;
     }
