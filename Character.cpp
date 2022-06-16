@@ -52,3 +52,17 @@ void Character::display(){
 std::vector<Item*> Character::getInventory(){
     return inventory;
 }
+
+std::string Character::getItemsNames(){
+    std::string nombres;
+    for (int i = 0; i < inventory.size(); i++)
+    {
+        nombres=nombres+inventory[i]->getName()+"\n";
+    }
+    return nombres;
+}
+
+std::ostream &operator << (std::ostream & salida, Character& player_){    
+    salida<<"Eres: "<<player_.getName()<<"\nTienes: \n"<<player_.getItemsNames()<<"\n";
+    return salida;
+}
