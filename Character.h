@@ -18,7 +18,7 @@ class Character {
         bool searchItem(std::string);
         std::vector<Item*> getInventory();
         std::string getItemsNames();
-        friend std::ostream& operator<< (std::ostream &, const Character&);
+        friend std::ostream& operator<< (std::ostream &, Character&);
     private:
         std::string name;
         Zone* position;

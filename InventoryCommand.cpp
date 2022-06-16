@@ -6,6 +6,7 @@ InventoryCommand::InventoryCommand(Character* player_):Command("inventory", ""){
 }
 
 void InventoryCommand::run(){
-    std::cout<<Invent<< std::endl;
+    Character inven=*Invent;
+    std::cout<<inven<< std::endl;
 
 }
