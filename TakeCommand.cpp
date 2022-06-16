@@ -25,9 +25,13 @@ void TakeCommand::run(){
             else{
             
             player->addItem(itemsz[num]);
-            actual->sacaItem(num);
+            actual->sacaItem(num);            
             std::cout << "Ahora tienes en tu poder: "<< std::endl;
             std::cout << itemsz[num]->getDescripcionLarga() << std::endl;
+            if (itemsz[num]->getName()=="nota_final"||itemsz[num]->getName()=="nota_final_alter")
+            {
+               exit(0);
+            }
             }
         }
         else{

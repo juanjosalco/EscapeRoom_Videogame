@@ -11,28 +11,30 @@ WordList* Parser::getComands(){
 
 Command* Parser::generateCommand(){
     std::string instruction, first, second;
-    std::cout << ">>>>";
-    std::getline(std::cin, instruction);
-    std::stringstream sstr(instruction);
-    sstr >> first;
-    sstr >> second;
-    sstr.ignore();
-    Command* com=comands->getCommand(first);
-    if(com){
-        com->setNextWord(second);
+    bool good=true;
+    while (good){
+        std::cout << ">>>>";
+        std::getline(std::cin, instruction);
+        std::stringstream sstr(instruction);
+        sstr >> first;
+        sstr >> second;
+        sstr.ignore();
+        Command* com=comands->getCommand(first);
+        try  {
+        Command* com=comands->getCommand(first);
+        if(com){
+            com->setNextWord(second);
+            good=false;
+            return com;
+        } else {
+            throw com;
+        }
+        }
+        catch (Command* error)  {
+            std::cout << "Debes ingresar un comando válido\n";
+        }
     }
-
-    try  {
-       Command* com=comands->getCommand(first);
-       if(com){
-        com->setNextWord(second);
-        return com;
-       } else {
-        throw com;
-       }
-    }
-    catch (Command* error)  {
-        std::cout << "Debes ingresar un comando válido\n";
-    }
+    
+    
 }
 

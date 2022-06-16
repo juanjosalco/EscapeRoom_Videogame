@@ -71,12 +71,12 @@ void Game::creaElementos(){
     piece3=new Piece("Aguja_de_reloj","Parece pertenecer a un reloj antiguo por su forma tan rebuscada y elegante",true,03,true);
     piece4=new Piece("Encendedor","Un zippo de metal con la incripcion 'Magico'",true,04,true);
     piece5=new Piece("Cable_de_alimentacion","Un simple cable de alimentacion para computadora",true,05,true);
-    piece6=new Piece("Llave_final","Esta vieja y oxidada pero aún debe de funcionar",false,06,true);
+    piece6=new Piece("Llave_final","Esta vieja y oxidada pero aún debe de funcionar",true,06,true);
     
 
     personaje->setPosition(start);
     start->addItem(note1);
-    start->addItem(piece6);
+    start->addItem(piece1);
     chest->addItem(note2);
     chest->addItem(piece2);
     bookcase->addItem(note3);
@@ -185,9 +185,6 @@ void Game::imprimeBienvenida(){
            
         if(personaje->getPosition()==zexit){
             if(personaje->searchItem("nota_final")||personaje->searchItem("nota_final_alternativa")){
-                exit(0);
-            }
-            else{
                 exit(0);
             }
         }
