@@ -44,11 +44,6 @@ bool Character::searchItem(std::string cosa){
     return false;
 }
 
-void Character::display(){
-    std::cout << "Soy " << name << std::endl;
-    std::cout << "y llevo en mi bolsa "<< numItems << "objetos recolectados." << std::endl;
-}
-
 std::vector<Item*> Character::getInventory(){
     return inventory;
 }

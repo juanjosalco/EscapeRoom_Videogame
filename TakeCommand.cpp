@@ -20,16 +20,14 @@ void TakeCommand::run(){
             
             if (itemsz[num]->getBlock())
             {
-                std::cout<<"no puedes tomar este item parece que necesitas otro item para acceder "<<std::endl;
+                std::cout<<"No puedes tomar este item parece que necesitas otro item para acceder "<<std::endl;
             }
             else{
-            
-            player->addItem(itemsz[num]);
-            actual->sacaItem(num);            
-            std::cout << "Ahora tienes en tu poder: "<< std::endl;
-            std::cout << itemsz[num]->getDescripcionLarga() << std::endl;
-            if (itemsz[num]->getName()=="nota_final"||itemsz[num]->getName()=="nota_final_alter")
-            {
+                player->addItem(itemsz[num]);
+                actual->sacaItem(num);            
+                std::cout << "Ahora tienes en tu poder: "<< std::endl;
+                std::cout << itemsz[num]->getDescripcionLarga() << std::endl;
+            if (itemsz[num]->getName()=="nota_final"||itemsz[num]->getName()=="nota_final_alter"){
                exit(0);
             }
             }

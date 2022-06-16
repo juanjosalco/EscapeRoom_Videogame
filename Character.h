@@ -14,7 +14,6 @@ class Character {
         void setPosition(Zone*);
         void addItem(Item*);
         Item* consultItem(int pos) const;
-        void display();
         bool searchItem(std::string);
         std::vector<Item*> getInventory();
         std::string getItemsNames();

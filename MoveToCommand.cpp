@@ -17,7 +17,7 @@ void MoveToCommand::run(){
            if (zonas[i]->getName()==direc)
            {
             player->setPosition(zonas[i]);
-            std::cout<<"ahora estas en: "<<zonas[i]->getName()<<"\n"<<zonas[i]->getDescription()<<std::endl;
+            std::cout<<"Ahora estas en: "<<zonas[i]->getName()<<"\n"<<zonas[i]->getDescription()<<std::endl;
            }
            
         }

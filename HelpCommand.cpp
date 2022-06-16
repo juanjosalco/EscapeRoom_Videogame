@@ -6,7 +6,6 @@ HelpCommand::HelpCommand(WordList* words):Command("help", ""){
 }
 
 void HelpCommand::run(){
-    std::cout<< "Estas desamparado en esta casa lugubre y solitaria" << std::endl;
     std::cout << "No sabes que hacer, pero no te preocupes, recuerda...." << std::endl;
     std::cout << avalible->allCommand() << std::endl;
 }
